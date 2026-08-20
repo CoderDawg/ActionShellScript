@@ -17,6 +17,7 @@ Portability note: `Struct` remains a core cross-platform language feature, `Reco
 ## Release Notes
 
 - [v0.2.0a2 - Alpha 2](releases/v0.2.0a2-alpha-2.md)
+- [v0.2.0a2 - Public Safe Snapshot](releases/v0.2.0a2-public.md)
 
 Phase 6 playback is complete as an explicit derived execution slice:
 
