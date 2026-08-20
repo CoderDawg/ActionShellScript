@@ -1,0 +1,54 @@
+ActionShellScript Third-Party Notices
+=====================================
+
+This repository is intended to be released under the MIT License. The project
+also depends on third-party software and assets that remain under their own
+licenses. Those licenses apply to the relevant third-party components, not to
+ActionShellScript itself.
+
+Runtime dependencies
+--------------------
+
+PySide6 / Qt for Python
+- License: LGPLv3 / GPLv3, with commercial Qt licensing also available.
+- Notes: Qt for Python is the official Python binding for Qt. If you distribute
+  binaries that include PySide6, comply with the applicable Qt license terms.
+
+pynput
+- License: LGPL-3.0
+- Notes: Used for input monitoring and playback. Preserve the applicable LGPL
+  notices and follow the LGPL terms for distribution.
+
+qtawesome
+- License: MIT
+- Notes: QtAwesome itself is MIT licensed, but it bundles or supports icon/font
+  sets that have their own licenses. Preserve the upstream notices for any icon
+  sets or fonts you redistribute.
+
+Bundled or supported icon/font licenses referenced by qtawesome
+- Font Awesome: SIL Open Font License
+- Elusive Icons: SIL Open Font License
+- Phosphor: MIT License
+- Material Design Icons: Apache License 2.0
+- Remix Icon: Apache License 2.0
+- Microsoft Codicons: Creative Commons Attribution 4.0 International Public License
+
+Build and packaging tools
+------------------------
+
+PyInstaller
+- License: GPL 2.0 with an exception allowing you to bundle commercial products,
+  plus Apache License 2.0 for some files.
+- Notes: PyInstaller does not require you to license ActionShellScript itself
+  under GPL when you use it to build distributable executables.
+
+Python
+- License: Python Software Foundation License Version 2
+
+Inno Setup
+- License: Inno Setup has its own licensing terms for the installer builder.
+- Notes: If you use Inno Setup commercially, review the current Inno Setup
+  commercial licensing terms separately from the ActionShellScript license.
+
+This notice file is provided as a convenience summary. For the authoritative
+license terms, refer to each upstream project’s license text and website.

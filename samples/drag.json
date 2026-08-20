@@ -1,0 +1,40 @@
+{
+  "session_id": "sample-drag",
+  "state": "stopped",
+  "started_at_ms": 103000,
+  "stopped_at_ms": 103260,
+  "events": [
+    {
+      "type": "mouse_down",
+      "button": "left",
+      "x": 220,
+      "y": 180,
+      "timestamp_ms": 18
+    },
+    {
+      "type": "mouse_move",
+      "x": 232,
+      "y": 186,
+      "timestamp_ms": 49
+    },
+    {
+      "type": "mouse_move",
+      "x": 261,
+      "y": 201,
+      "timestamp_ms": 84
+    },
+    {
+      "type": "mouse_move",
+      "x": 298,
+      "y": 220,
+      "timestamp_ms": 127
+    },
+    {
+      "type": "mouse_up",
+      "button": "left",
+      "x": 312,
+      "y": 228,
+      "timestamp_ms": 162
+    }
+  ]
+}

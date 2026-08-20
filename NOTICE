@@ -1,0 +1,9 @@
+ActionShellScript
+
+Copyright (c) 2026 ActionShellScript contributors
+
+Licensed under the MIT License. See [LICENSE](LICENSE) for the full text.
+
+This release bundles third-party dependencies and assets that remain under
+their own licenses. For the full third-party summary, see
+[THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES) in the source repository.

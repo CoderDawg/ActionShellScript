@@ -1,0 +1,92 @@
+macro_recorder/
+  pyproject.toml
+  README.md
+
+  apps/
+    cli/
+      main.py
+      record_command.py
+      script_command.py
+      playback_command.py
+      debug_command.py
+
+    desktop/
+      app.py
+      main_window.py
+      debug_panel.py
+      variables_panel.py
+
+  application/
+    artifact_service.py
+    recording_service.py
+    playback_service.py
+    debugging_service.py
+
+  core/
+    recording/
+      recorder_config.py
+      session_recorder.py
+      input_capture.py
+      event_normalizer.py
+
+    interpretation/
+      recording_interpreter.py
+
+    shaping/
+      shaping_pipeline.py
+      shaping_profile.py
+
+    playback/
+      playback_engine.py
+      input_executor.py
+      playback_diagnostics.py
+
+    scripting/
+      tokens.py
+      lexer.py
+      parser.py
+      ast_nodes.py
+      formatter.py
+      diagnostics.py
+      source_map.py
+
+    runtime/
+      script_runtime.py
+      execution_context.py
+      runtime_errors.py
+      host_values.py
+      builtin_macro_calls.py
+      builtin_constants.py
+
+    debugging/
+      debug_controller.py
+      debug_session.py
+      breakpoints.py
+      events.py
+      session_state.py
+
+    artifacts/
+      artifact_builder.py
+      artifact_bundle.py
+
+  editor/
+    text_document.py
+    code_editor.py
+    formatting_service.py
+    diagnostics_service.py
+    breakpoint_store.py
+
+  infrastructure/
+    settings_store.py
+    debug_logger.py
+    paths.py
+
+  tests/
+    unit/
+    contract/
+    integration/
+
+  docs/
+    internal/architecture/
+    user/
+    project/

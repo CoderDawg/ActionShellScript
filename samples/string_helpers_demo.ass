@@ -1,0 +1,49 @@
+// Demo for the string helper surface.
+// It exercises comparison, search, replacement, regex, case conversion,
+// slicing, trimming, reversal, and split/join helpers in one runnable sample.
+
+Dim source = "ActionShellScript"
+Dim words = StringSplit("Ada Lovelace", " ")
+
+Dim compare_equal = StringCompare("Alpha", "alpha")
+Dim compare_sensitive = StringCompare("Alpha", "alpha", 1)
+Dim search_rightmost = StringInStr("one two one two one", "one", 0, -1)
+Dim search_bounded = StringInStr("the string to search", "string", 0, 1, 1, 11)
+Dim regex_escape = RegexEscape("a.b")
+Dim regex_is_match = RegexIsMatch("Ada Lovelace", "(\w+)\s+(\w+)")
+Dim regex_in_str = RegexInStr("one two one two one", "one", 5)
+Dim regex_match = RegexMatch("Ada Lovelace", "(\w+)\s+(\w+)")
+Dim regex_replace = RegexReplace("a1b2c3", "(\d)", "[$1]")
+
+WriteLn("compare_equal: " + compare_equal)
+WriteLn("compare_sensitive: " + compare_sensitive)
+WriteLn("search_rightmost: " + search_rightmost)
+WriteLn("search_bounded: " + search_bounded)
+WriteLn("regex_escape: " + regex_escape)
+WriteLn("regex_is_match: " + regex_is_match)
+WriteLn("regex_in_str: " + regex_in_str)
+WriteLn("regex_match_full: " + regex_match[0])
+WriteLn("regex_match_first: " + regex_match[1])
+WriteLn("regex_match_last: " + regex_match[2])
+WriteLn("regex_replace: " + regex_replace)
+WriteLn("regex_replace_extended: " + @Extended)
+
+Dim replace_all = StringReplace("one two one two", "one", "1")
+Dim replace_from_start = StringReplace("abcdef", 3, "XYZ")
+Dim replace_from_start_extended = @Extended
+Dim replace_from_start_error = @Error
+
+WriteLn("replace_all: " + replace_all)
+WriteLn("replace_from_start: " + replace_from_start)
+WriteLn("@Extended: " + replace_from_start_extended)
+WriteLn("@Error: " + replace_from_start_error)
+WriteLn("lower: " + StringToLower("MiXeD Case"))
+WriteLn("upper: " + StringToUpper("MiXeD Case"))
+WriteLn("length: " + StringLength(source))
+WriteLn("left: " + StringLeft(source, 6))
+WriteLn("right: " + StringRight(source, 6))
+WriteLn("mid: " + StringMid(source, 7, 5))
+WriteLn("trim_left: " + StringTrimLeft(source, 6))
+WriteLn("trim_right: " + StringTrimRight(source, 6))
+WriteLn("reverse: " + StringReverse(source))
+WriteLn("joined: " + StringJoin(words, ", "))

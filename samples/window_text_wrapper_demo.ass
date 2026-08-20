@@ -1,0 +1,9 @@
+// Windows-only demo for the GetWindowText wrapper builtin.
+
+Declare Func GetDesktopWindow Lib "user32.dll" StdCall () As Ptr
+
+Dim desktop = GetDesktopWindow()
+Dim title = GetWindowText(desktop)
+
+WriteLn("GetWindowText")
+WriteLn(title)

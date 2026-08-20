@@ -1,0 +1,33 @@
+// Date and time smoke demo for the runtime helpers.
+//
+// This sample stays focused on the date/time surface:
+// Time, LocalTime, UTCTime, ParseDateTime, ParseDateTimeInOffset,
+// FormatDateTime, FormatDateTimeInOffset, ConvertTimeZone, UTCOffset,
+// DateAdd, DateDiff, DateSerial, TimeSerial, DaysInMonth, and IsLeapYear.
+
+Dim current_epoch = Time()
+Dim local_clock = LocalTime(current_epoch)
+Dim utc_clock = UTCTime()
+Dim parsed = ParseDateTime("2026-05-26 15:04:05", "%Y-%m-%d %H:%M:%S")
+Dim parsed_offset = ParseDateTimeInOffset("2026-05-26 15:04:05", "%Y-%m-%d %H:%M:%S", "+0200")
+Dim offset_round_trip = ConvertTimeZone(parsed_offset, "+0200", "+0000")
+Dim next_day = DateAdd(parsed, 1, "days")
+Dim date_serial = DateSerial(2026, 5, 26)
+Dim time_serial = TimeSerial(15, 4, 5)
+Dim days_in_month = DaysInMonth(local_clock)
+Dim utc_offset_minutes = UTCOffset(current_epoch)
+
+WriteLn(current_epoch)
+WriteLn(FormatDateTime(local_clock, "%Y-%m-%d %H:%M:%S"))
+WriteLn(FormatDateTime(utc_clock, "%Y-%m-%d %H:%M:%S"))
+WriteLn(FormatDateTime(parsed, "%Y-%m-%d %H:%M:%S"))
+WriteLn(FormatDateTime(next_day, "%Y-%m-%d %H:%M:%S"))
+WriteLn(FormatDateTimeInOffset(parsed_offset, "%Y-%m-%d %H:%M:%S %z", "+0200"))
+WriteLn(FormatDateTimeInOffset(offset_round_trip, "%Y-%m-%d %H:%M:%S %z", "+0000"))
+WriteLn(utc_offset_minutes)
+WriteLn(FormatDateTime(date_serial, "%Y-%m-%d %H:%M:%S"))
+WriteLn(time_serial)
+WriteLn(days_in_month)
+WriteLn(IsLeapYear(2024))
+WriteLn(IsLeapYear(2026))
+WriteLn(DateDiff(parsed, next_day, "days"))

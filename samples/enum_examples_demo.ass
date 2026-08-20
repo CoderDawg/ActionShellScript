@@ -1,0 +1,26 @@
+// Demo for the enum surface.
+// It shows namespace-qualified access, direct enum member names, and a helper
+// function that turns enum values into readable labels.
+
+Enum WindowState
+    Hidden = 0
+    Visible
+    Maximized = Visible + 1
+End Enum
+
+Func DescribeWindowState(state)
+    If state == WindowState.Hidden Then
+        Return "hidden"
+    ElseIf state == WindowState.Visible Then
+        Return "visible"
+    ElseIf state == WindowState.Maximized Then
+        Return "maximized"
+    End If
+
+    Return "unknown"
+End Func
+
+WriteLn("hidden: " + DescribeWindowState(WindowState.Hidden))
+WriteLn("visible: " + DescribeWindowState(WindowState.Visible))
+WriteLn("maximized: " + DescribeWindowState(WindowState.Maximized))
+WriteLn("direct_name: " + DescribeWindowState(Visible))

@@ -1,0 +1,8 @@
+Dim sample_dir = @ScriptDirectory
+Dim repo_root = PathCombine(sample_dir, "..")
+Dim files = FileList(sample_dir, "read_file_demo.*")
+Dim directories = DirectoryList(repo_root, "samples")
+
+WriteLn("file_0: " + FileName(files[0]))
+WriteLn("file_1: " + FileName(files[1]))
+WriteLn("directory_0: " + FileName(directories[0]))

@@ -1,0 +1,22 @@
+{
+  "session_id": "sample-click",
+  "state": "stopped",
+  "started_at_ms": 101000,
+  "stopped_at_ms": 101080,
+  "events": [
+    {
+      "type": "mouse_down",
+      "button": "left",
+      "x": 640,
+      "y": 360,
+      "timestamp_ms": 12
+    },
+    {
+      "type": "mouse_up",
+      "button": "left",
+      "x": 640,
+      "y": 360,
+      "timestamp_ms": 47
+    }
+  ]
+}

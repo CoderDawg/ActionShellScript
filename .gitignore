@@ -1,0 +1,25 @@
+# Virtual environment
+.venv/
+# Python / test caches
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Build / packaging output
+build/
+dist/
+release_stage/
+tmp/
+tmp_wheelcheck/
+*.egg-info/
+
+# Editor / local tooling
+.vscode/
+.vscode/settings.json
+.ropeproject/
+
+# Runtime diagnostics logs
+logs/
+# Runtime diagnostics logs emitted by the app and helper scripts.
+logs/actionshellscript_diagnostics_*.log

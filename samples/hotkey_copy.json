@@ -1,0 +1,28 @@
+{
+  "session_id": "sample-hotkey-copy",
+  "state": "stopped",
+  "started_at_ms": 104000,
+  "stopped_at_ms": 104180,
+  "events": [
+    {
+      "type": "key_down",
+      "key": "ctrl",
+      "timestamp_ms": 11
+    },
+    {
+      "type": "key_down",
+      "key": "c",
+      "timestamp_ms": 29
+    },
+    {
+      "type": "key_up",
+      "key": "c",
+      "timestamp_ms": 61
+    },
+    {
+      "type": "key_up",
+      "key": "ctrl",
+      "timestamp_ms": 89
+    }
+  ]
+}

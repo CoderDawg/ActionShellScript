@@ -1,0 +1,28 @@
+{
+  "session_id": "sample-borderline-click-drag",
+  "state": "stopped",
+  "started_at_ms": 105000,
+  "stopped_at_ms": 105180,
+  "events": [
+    {
+      "type": "mouse_down",
+      "button": "left",
+      "x": 400,
+      "y": 300,
+      "timestamp_ms": 14
+    },
+    {
+      "type": "mouse_move",
+      "x": 406,
+      "y": 300,
+      "timestamp_ms": 39
+    },
+    {
+      "type": "mouse_up",
+      "button": "left",
+      "x": 406,
+      "y": 300,
+      "timestamp_ms": 67
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+// Demo for script-only Record support with nested Struct values.
+
+Struct Rect
+    Left As Int32
+    Top As Int32
+    Right As Int32
+    Bottom As Int32
+End Struct
+
+Record WindowInfo
+    Title As String
+    Bounds As Rect
+End Record
+
+Record WindowSnapshot
+    Info As WindowInfo
+    IsVisible As Bool
+End Record
+
+Dim info = WindowInfo("Record demo", Rect(10, 20, 640, 480))
+Dim snapshot = WindowSnapshot(info, True)
+Dim sample_count = 0
+Dim prefix_value = ++sample_count
+Dim postfix_value = sample_count++
+
+WriteLn(info.Title)
+WriteLn(info.Bounds.Right)
+WriteLn(snapshot.Info.Bounds.Bottom)
+WriteLn(snapshot.IsVisible)
+WriteLn(prefix_value)
+WriteLn(postfix_value)
+WriteLn(sample_count)

@@ -1,0 +1,50 @@
+// Windows-only demo for the GetMonitorInfo and GetMonitorInfoEx wrappers.
+// It resolves an HMONITOR from a point on the desktop, then prints the
+// returned monitor geometry and device name.
+
+Struct Point
+    X As Int32
+    Y As Int32
+End Struct
+
+Struct Rect
+    Left As Int32
+    Top As Int32
+    Right As Int32
+    Bottom As Int32
+End Struct
+
+Struct MonitorInfo
+    cbSize As UInt32
+    rcMonitor As Rect
+    rcWork As Rect
+    dwFlags As UInt32
+End Struct
+
+Struct MonitorInfoEx
+    cbSize As UInt32
+    rcMonitor As Rect
+    rcWork As Rect
+    dwFlags As UInt32
+    szDevice As String
+End Struct
+
+Declare Func MonitorFromPoint Lib "user32.dll" StdCall (pt As Point, dwFlags As UInt32) As Ptr
+
+Dim monitor_point = Point(0, 0)
+Dim monitor_handle = MonitorFromPoint(monitor_point, 2)
+Dim monitor_info = GetMonitorInfo(monitor_handle)
+Dim monitor_info_ex = GetMonitorInfoEx(monitor_handle)
+
+WriteLn("GetMonitorInfo")
+WriteLn("cbSize=" & monitor_info.cbSize)
+WriteLn("rcMonitor=" & monitor_info.rcMonitor.Left & "," & monitor_info.rcMonitor.Top & "," & monitor_info.rcMonitor.Right & "," & monitor_info.rcMonitor.Bottom)
+WriteLn("rcWork=" & monitor_info.rcWork.Left & "," & monitor_info.rcWork.Top & "," & monitor_info.rcWork.Right & "," & monitor_info.rcWork.Bottom)
+WriteLn("dwFlags=" & monitor_info.dwFlags)
+
+WriteLn("GetMonitorInfoEx")
+WriteLn("cbSize=" & monitor_info_ex.cbSize)
+WriteLn("rcMonitor=" & monitor_info_ex.rcMonitor.Left & "," & monitor_info_ex.rcMonitor.Top & "," & monitor_info_ex.rcMonitor.Right & "," & monitor_info_ex.rcMonitor.Bottom)
+WriteLn("rcWork=" & monitor_info_ex.rcWork.Left & "," & monitor_info_ex.rcWork.Top & "," & monitor_info_ex.rcWork.Right & "," & monitor_info_ex.rcWork.Bottom)
+WriteLn("dwFlags=" & monitor_info_ex.dwFlags)
+WriteLn("szDevice=" & monitor_info_ex.szDevice)

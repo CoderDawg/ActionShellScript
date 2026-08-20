@@ -1,0 +1,21 @@
+Dim scratch = PathCombine(@WorkingDir, "__traverse_demo__")
+Dim root = PathCombine(scratch, "root")
+Dim nested = PathCombine(root, "nested")
+Dim deep = PathCombine(nested, "deep")
+Dim root_file = PathCombine(root, "alpha.txt")
+Dim nested_file = PathCombine(nested, "beta.txt")
+Dim deep_file = PathCombine(deep, "omega.log")
+
+CreateDir(deep)
+WriteFile(root_file, "root")
+WriteFile(nested_file, "nested")
+WriteFile(deep_file, "deep")
+
+Dim dirs = WalkDir(root)
+Dim files = EnumerateFiles(root, "*.txt")
+
+WriteLn("dir_0: " + FileName(dirs[0]))
+WriteLn("dir_1: " + FileName(dirs[1]))
+WriteLn("files_0: " + FileName(files[0]))
+WriteLn("files_1: " + FileName(files[1]))
+RemoveDir(scratch, 1)

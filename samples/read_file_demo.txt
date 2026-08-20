@@ -1,0 +1,3 @@
+Hello from ReadFile
+This fixture sits beside the demo
+Each line is printed by the script

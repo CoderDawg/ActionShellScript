@@ -1,0 +1,36 @@
+// Demo for ReadFile and line iteration over a tiny text fixture.
+// It reads a sibling text file and prints each line.
+
+Func PrintFileLines(path)
+    Dim text = ReadFile(path)
+    Dim remaining = text
+
+    While StringLength(remaining) > 0
+        Dim crlf_pos = StringInStr(remaining, @CRLF)
+        Dim lf_pos = StringInStr(remaining, @LF)
+        Dim newline_pos = 0
+        Dim newline_len = 0
+
+        If crlf_pos > 0 And (lf_pos == 0 Or crlf_pos < lf_pos) Then
+            newline_pos = crlf_pos
+            newline_len = 2
+        ElseIf lf_pos > 0 Then
+            newline_pos = lf_pos
+            newline_len = 1
+        End If
+
+        Dim line = ""
+        If newline_pos == 0 Then
+            line = remaining
+            remaining = ""
+        Else
+            line = StringLeft(remaining, newline_pos - 1)
+            remaining = StringMid(remaining, newline_pos + newline_len)
+        End If
+
+        WriteLn(line)
+    Wend
+End Func
+
+Dim fixture_path = PathCombine(@ScriptDirectory, "read_file_demo.txt")
+PrintFileLines(fixture_path)

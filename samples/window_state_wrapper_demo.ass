@@ -1,0 +1,12 @@
+// Windows-only demo for the IsZoomed, IsIconic, and IsWindowVisible wrapper builtins.
+
+Declare Func GetDesktopWindow Lib "user32.dll" StdCall () As Ptr
+
+Dim desktop = GetDesktopWindow()
+Dim zoomed = IsZoomed(desktop)
+Dim iconic = IsIconic(desktop)
+Dim visible = IsWindowVisible(desktop)
+
+WriteLn("IsZoomed=" & zoomed)
+WriteLn("IsIconic=" & iconic)
+WriteLn("IsWindowVisible=" & visible)

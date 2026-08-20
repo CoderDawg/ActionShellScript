@@ -1,0 +1,8 @@
+// Windows-only demo for the GetWindowLongPtr wrapper builtin.
+
+Declare Func GetDesktopWindow Lib "user32.dll" StdCall () As Ptr
+
+Dim desktop = GetDesktopWindow()
+Dim style = GetWindowLongPtr(desktop, -16)
+
+WriteLn("GetWindowLongPtr(GWL_STYLE)=" & style)

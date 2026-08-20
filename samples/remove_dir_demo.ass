@@ -1,0 +1,7 @@
+Dim scratch = PathCombine(@WorkingDir, "__remove_dir_demo__")
+Dim nested = PathCombine(scratch, "nested")
+
+CreateDir(nested)
+WriteLn("before: " + DirExists(scratch))
+RemoveDir(scratch, 1)
+WriteLn("after: " + DirExists(scratch))

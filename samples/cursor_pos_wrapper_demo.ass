@@ -1,0 +1,13 @@
+// Windows-only demo for the GetCursorPos wrapper builtin.
+// It returns a Point struct directly from the script-facing builtin.
+
+Struct Point
+    X As Int32
+    Y As Int32
+End Struct
+
+Dim cursor = GetCursorPos()
+
+WriteLn("GetCursorPos")
+WriteLn("X=" & cursor.X)
+WriteLn("Y=" & cursor.Y)

@@ -1,0 +1,17 @@
+Dim scratch = PathCombine(@WorkingDir, "__metadata_demo__")
+Dim data_file = PathCombine(scratch, "payload.txt")
+
+CreateDir(scratch)
+WriteFile(data_file, "hello world")
+
+Dim info = FileInfo(data_file)
+WriteLn("size: " + FileSize(data_file))
+WriteLn("dir_size: " + FileSize(scratch))
+WriteLn("file_name: " + info.Name)
+WriteLn("is_dir: " + info.IsDirectory)
+WriteLn("time_is_float: " + StringIsFloat(FileTime(data_file)))
+WriteLn("sha256: " + FileHash(data_file))
+WriteLn("md5: " + FileHash(data_file, "md5"))
+WriteLn("crc32: " + FileChecksum(data_file))
+WriteLn("adler32: " + FileChecksum(data_file, "adler32"))
+RemoveDir(scratch, 1)

@@ -1,0 +1,22 @@
+ActionShellScript Attribution and Third-Party Notices
+
+ActionShellScript is distributed under the MIT License.
+
+Runtime components
+
+- PySide6 / Qt for Python: LGPLv3 / GPLv3, with commercial Qt licensing also
+  available.
+- pynput: LGPL-3.0.
+- qtawesome: MIT License, with bundled icon and font sets governed by
+  separate upstream licenses.
+
+Build and packaging tools
+
+- PyInstaller: GPL 2.0 with an exception allowing bundled commercial
+  products, plus Apache License 2.0 for some files.
+- Python: Python Software Foundation License Version 2.
+- Inno Setup: separate installer licensing terms apply; commercial use may
+  require a commercial license.
+
+The complete third-party summary is available in THIRD_PARTY_NOTICES in the
+source repository.

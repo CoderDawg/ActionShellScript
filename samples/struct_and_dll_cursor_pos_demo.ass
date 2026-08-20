@@ -1,0 +1,16 @@
+// Windows-only smoke demo for the struct and DLL interop surface.
+// It exercises a real Win32-style POINT shape with GetCursorPos.
+
+Struct POINT
+    X As Int32
+    Y As Int32
+End Struct
+
+Declare Func GetCursorPos Lib "user32.dll" StdCall (ByRef lpPoint As POINT) As Bool
+
+Dim cursor = POINT(0, 0)
+Dim ok = GetCursorPos(cursor)
+
+WriteLn(ok)
+WriteLn(cursor.X)
+WriteLn(cursor.Y)

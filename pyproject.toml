@@ -1,0 +1,47 @@
+[build-system]
+requires = []
+build-backend = "build_backend"
+backend-path = ["."]
+
+[project]
+name = "actionshellscript"
+version = "0.2.0a2"
+description = "ActionShellScript document, playback, debugger, help, and builtin tooling"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE", "NOTICE", "ATTRIBUTION.txt"]
+dependencies = [
+    "pynput>=1.7,<2.0",
+    "PySide6>=6.7,<7.0",
+    "qtawesome>=1.4.2,<2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/CoderDawg/ActionShellScript"
+Repository = "https://github.com/CoderDawg/ActionShellScript"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<9.0",
+]
+
+[project.scripts]
+ass-cli = "apps.cli.ass_cli:main"
+ass-record = "apps.cli.main:main"
+ass-gui = "apps.desktop.main:main"
+ass-help = "apps.desktop.help_main:main"
+ass-debug = "apps.cli.debug_command:main"
+ass-interpret = "apps.cli.interpret_command:main"
+ass-record-interpret = "apps.cli.record_interpret_command:main"
+ass-shape = "apps.cli.shape_command:main"
+ass-generate = "apps.cli.generate_command:main"
+ass-open-script = "apps.cli.document_command:main"
+ass-play = "apps.cli.play_command:main"
+ass-filter-recording = "apps.cli.filter_recording_command:main"
+ass-filter-interpretation = "apps.cli.filter_interpretation_command:main"
+ass-filter-shaping = "apps.cli.filter_shaping_command:main"
+ass-filter-document = "apps.cli.filter_document_command:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

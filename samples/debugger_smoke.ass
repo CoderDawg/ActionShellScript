@@ -1,0 +1,11 @@
+Func AddOne(value)
+    Return value + 1
+EndFunc
+
+Dim x = 1
+Dim before = x++
+Dim after = ++x
+x = AddOne(x)
+WriteLn(before)
+WriteLn(after)
+WriteLn(x)

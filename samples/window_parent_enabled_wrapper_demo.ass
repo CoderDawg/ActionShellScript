@@ -1,0 +1,10 @@
+// Windows-only demo for the GetParent and IsWindowEnabled wrapper builtins.
+
+Declare Func GetDesktopWindow Lib "user32.dll" StdCall () As Ptr
+
+Dim desktop = GetDesktopWindow()
+Dim parent = GetParent(desktop)
+Dim enabled = IsWindowEnabled(desktop)
+
+WriteLn("GetParent=" & parent)
+WriteLn("IsWindowEnabled=" & enabled)

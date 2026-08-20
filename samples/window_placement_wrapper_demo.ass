@@ -1,0 +1,33 @@
+// Windows-only demo for the GetWindowPlacement wrapper builtin.
+
+Struct Point
+    X As Int32
+    Y As Int32
+End Struct
+
+Struct Rect
+    Left As Int32
+    Top As Int32
+    Right As Int32
+    Bottom As Int32
+End Struct
+
+Struct WindowPlacement
+    length As UInt32
+    flags As UInt32
+    showCmd As UInt32
+    ptMinPosition As Point
+    ptMaxPosition As Point
+    rcNormalPosition As Rect
+End Struct
+
+Declare Func GetDesktopWindow Lib "user32.dll" StdCall () As Ptr
+
+Dim desktop = GetDesktopWindow()
+Dim placement = GetWindowPlacement(desktop)
+
+WriteLn("GetWindowPlacement")
+WriteLn("showCmd=" & placement.showCmd)
+WriteLn("min=" & placement.ptMinPosition.X & "," & placement.ptMinPosition.Y)
+WriteLn("max=" & placement.ptMaxPosition.X & "," & placement.ptMaxPosition.Y)
+WriteLn("normal.right=" & placement.rcNormalPosition.Right)

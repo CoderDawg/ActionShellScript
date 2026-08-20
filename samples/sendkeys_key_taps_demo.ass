@@ -1,0 +1,4 @@
+// Canonical repro for SendKeys transport in key-tap mode.
+// Use this with `ass-cli play script .\samples\sendkeys_key_taps_demo.ass --mode live --demo-live --ass-play`.
+
+SendKeys("Ab c")

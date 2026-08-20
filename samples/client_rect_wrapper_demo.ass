@@ -1,0 +1,20 @@
+// Windows-only demo for the GetClientRect wrapper builtin.
+// It returns a Rect struct directly from the script-facing builtin.
+
+Struct Rect
+    Left As Int32
+    Top As Int32
+    Right As Int32
+    Bottom As Int32
+End Struct
+
+Declare Func GetDesktopWindow Lib "user32.dll" StdCall () As Ptr
+
+Dim desktop = GetDesktopWindow()
+Dim client_rect = GetClientRect(desktop)
+
+WriteLn("GetClientRect")
+WriteLn("Left=" & client_rect.Left)
+WriteLn("Top=" & client_rect.Top)
+WriteLn("Right=" & client_rect.Right)
+WriteLn("Bottom=" & client_rect.Bottom)

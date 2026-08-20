@@ -1,0 +1,9 @@
+// Windows-only demo for the GetClassName wrapper builtin.
+
+Declare Func GetDesktopWindow Lib "user32.dll" StdCall () As Ptr
+
+Dim desktop = GetDesktopWindow()
+Dim class_name = GetClassName(desktop)
+
+WriteLn("GetClassName")
+WriteLn(class_name)

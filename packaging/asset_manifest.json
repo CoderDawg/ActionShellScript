@@ -1,0 +1,9 @@
+{
+  "runtime_assets": [
+    "apps/desktop/assets/combo_box_arrow.svg",
+    "apps/desktop/assets/retro_pixelated_teal_smiling_frog.ico",
+    "apps/desktop/assets/retro_pixelated_teal_smiling_frog.png",
+    "assets/icons/msc_debug-breakpoint.png"
+  ],
+  "installer_setup_icon": "apps/desktop/assets/retro_pixelated_teal_smiling_frog.ico"
+}

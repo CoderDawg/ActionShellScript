@@ -1,0 +1,411 @@
+macro_recorder/
+  pyproject.toml
+  README.md
+  .gitignore
+
+  apps/
+    desktop/
+      __init__.py
+      app.py
+      bootstrap.py
+
+      shell/
+        __init__.py
+        main_window.py
+        app_state.py
+        actions.py
+        menus.py
+        shortcuts.py
+        status_bar.py
+
+      panels/
+        __init__.py
+        editor_panel.py
+        variables_panel.py
+        call_stack_panel.py
+        execution_trace_panel.py
+        diagnostics_panel.py
+        recording_panel.py
+        playback_panel.py
+
+      dialogs/
+        __init__.py
+        settings_dialog.py
+        find_replace_dialog.py
+        go_to_line_dialog.py
+        filter_profiles_dialog.py
+        run_macro_dialog.py
+        help_dialog.py
+
+      presenters/
+        __init__.py
+        debug_presenter.py
+        playback_presenter.py
+        recording_presenter.py
+        diagnostics_presenter.py
+
+      viewmodels/
+        __init__.py
+        editor_view_model.py
+        debug_inspector_view_model.py
+        playback_view_model.py
+        recording_view_model.py
+
+      styling/
+        __init__.py
+        theme.py
+        palette.py
+        typography.py
+
+    cli/
+      __init__.py
+      main.py
+
+      commands/
+        __init__.py
+        record_command.py
+        script_command.py
+        playback_command.py
+        debug_command.py
+        export_command.py
+
+      formatters/
+        __init__.py
+        diagnostics_formatter.py
+        debug_formatter.py
+        playback_formatter.py
+
+  application/
+    __init__.py
+
+    models/
+      __init__.py
+      artifact_bundle.py
+      debug_run_request.py
+      debug_run_result.py
+      playback_run_request.py
+      playback_run_result.py
+      record_session_result.py
+      script_run_request.py
+      script_run_result.py
+
+    workflows/
+      __init__.py
+      record_macro_workflow.py
+      stop_recording_workflow.py
+      build_artifacts_workflow.py
+      run_script_workflow.py
+      debug_script_workflow.py
+      playback_macro_workflow.py
+      export_script_workflow.py
+
+    services/
+      __init__.py
+      artifact_service.py
+      recording_service.py
+      playback_service.py
+      scripting_service.py
+      debugging_service.py
+      editor_service.py
+      settings_service.py
+
+  core/
+    __init__.py
+
+    artifacts/
+      __init__.py
+      contracts.py
+      artifact_builder.py
+      artifact_bundle.py
+      diagnostics_builder.py
+      render_settings.py
+      playback_plan_builder.py
+      script_render_service.py
+
+    recording/
+      __init__.py
+      recorder_config.py
+      raw_event_schema.py
+      session_recorder.py
+      recorder_engine.py
+      capture_session.py
+
+      capture/
+        __init__.py
+        input_capture.py
+        mouse_capture.py
+        keyboard_capture.py
+        hotkey_capture.py
+
+      normalization/
+        __init__.py
+        event_normalizer.py
+        event_factory.py
+        event_utils.py
+        timestamp_normalizer.py
+        noise_cleanup.py
+
+    interpretation/
+      __init__.py
+      recording_interpreter.py
+      click_interpreter.py
+      drag_interpreter.py
+      keyboard_interpreter.py
+      hotkey_interpreter.py
+      gesture_models.py
+
+    shaping/
+      __init__.py
+      shaping_profile.py
+      shaping_pipeline.py
+      action_simplifier.py
+      script_optimizer.py
+      action_identifier.py
+      delay_shaper.py
+      mouse_path_simplifier.py
+      click_sequence_shaper.py
+      keyboard_shaper.py
+
+    playback/
+      __init__.py
+      playback_engine.py
+      playback_plan.py
+      playback_session.py
+      playback_config.py
+      playback_diagnostics.py
+
+      executors/
+        __init__.py
+        input_executor.py
+        preview_input_executor.py
+        pynput_input_executor.py
+
+      adaptation/
+        __init__.py
+        playback_adaptation.py
+        timing_adaptation.py
+        environment_adaptation.py
+        safety_adaptation.py
+
+    scripting/
+      __init__.py
+      language_definition.py
+      tokens.py
+      lexer.py
+      parser.py
+      ast_nodes.py
+      formatter.py
+      diagnostics.py
+      source_text.py
+      source_map.py
+
+      analysis/
+        __init__.py
+        semantic_model.py
+        symbol_table.py
+        scope_builder.py
+        name_resolution.py
+
+      rendering/
+        __init__.py
+        script_generator.py
+        script_renderer.py
+        interpolated_string_renderer.py
+
+    runtime/
+      __init__.py
+      script_runtime.py
+      execution_context.py
+      runtime_errors.py
+      runtime_session.py
+      host_values.py
+
+      builtins/
+        __init__.py
+        builtin_constants.py
+        builtin_macro_calls.py
+        file_builtins.py
+        string_builtins.py
+        binary_builtins.py
+        input_builtins.py
+        dialog_builtins.py
+
+      execution/
+        __init__.py
+        statement_executor.py
+        expression_evaluator.py
+        function_dispatch.py
+        control_flow.py
+
+    debugging/
+      __init__.py
+      debug_controller.py
+      debug_session.py
+      session_state.py
+      breakpoints.py
+      events.py
+      source_map.py
+      stepping.py
+      variable_snapshot.py
+      call_stack_snapshot.py
+
+    shared/
+      __init__.py
+      event_types.py
+      action_types.py
+      result.py
+      errors.py
+
+  editor/
+    __init__.py
+
+    document/
+      __init__.py
+      text_document.py
+      document_buffer.py
+      cursor_state.py
+      selection_state.py
+      undo_redo.py
+      file_session.py
+
+    language_services/
+      __init__.py
+      parse_service.py
+      diagnostics_service.py
+      formatting_service.py
+      outline_service.py
+      navigation_service.py
+      hover_service.py
+      completion_service.py
+
+    breakpoints/
+      __init__.py
+      breakpoint_model.py
+      breakpoint_store.py
+      gutter_controller.py
+
+    execution/
+      __init__.py
+      execution_highlighting.py
+      current_line_tracker.py
+      debug_visual_state.py
+
+    widgets/
+      __init__.py
+      code_editor.py
+      gutter_widget.py
+      minimap_widget.py
+      find_panel.py
+
+  infrastructure/
+    __init__.py
+
+    input/
+      __init__.py
+      pynput_backend.py
+      keyboard_backend.py
+      mouse_backend.py
+      global_hotkey_backend.py
+
+    persistence/
+      __init__.py
+      settings_store.py
+      profile_store.py
+      session_store.py
+      script_store.py
+
+    logging/
+      __init__.py
+      debug_logger.py
+      trace_logger.py
+      logging_config.py
+
+    platform/
+      __init__.py
+      paths.py
+      environment.py
+      os_detection.py
+      permissions.py
+
+  tests/
+    unit/
+      recording/
+        test_event_normalizer.py
+        test_noise_cleanup.py
+        test_input_capture.py
+
+      interpretation/
+        test_click_interpreter.py
+        test_drag_interpreter.py
+        test_hotkey_interpreter.py
+
+      shaping/
+        test_action_simplifier.py
+        test_mouse_path_simplifier.py
+        test_script_optimizer.py
+
+      scripting/
+        test_lexer.py
+        test_parser.py
+        test_formatter.py
+        test_source_map.py
+
+      runtime/
+        test_expression_evaluator.py
+        test_script_runtime_core.py
+        test_runtime_errors.py
+
+      debugging/
+        test_breakpoints.py
+        test_debug_controller.py
+        test_step_modes.py
+
+      playback/
+        test_playback_plan_builder.py
+        test_playback_engine.py
+        test_playback_adaptation.py
+
+    contract/
+      test_artifact_builder_contract.py
+      test_recording_to_artifacts_contract.py
+      test_script_to_runtime_contract.py
+      test_runtime_to_playback_contract.py
+      test_debug_snapshot_contract.py
+
+    integration/
+      test_record_to_artifacts_flow.py
+      test_script_debug_flow.py
+      test_script_playback_flow.py
+      test_cli_record_command.py
+      test_cli_debug_command.py
+      test_desktop_editor_debug_flow.py
+
+    e2e/
+      test_record_edit_playback.py
+      test_script_debug_session.py
+
+  docs/
+    internal/architecture/
+      system_overview.md
+      recording_pipeline.md
+      interpretation_pipeline.md
+      shaping_pipeline.md
+      scripting_runtime.md
+      debugging.md
+      editor_architecture.md
+      ui_shell.md
+
+    user/
+      getting_started.md
+      recording_and_playback.md
+      scripting_language.md
+      debugging_scripts.md
+      editor_guide.md
+
+    project/
+      roadmap.md
+      architectural_decisions.md
+      migration_plan.md
+
+
+

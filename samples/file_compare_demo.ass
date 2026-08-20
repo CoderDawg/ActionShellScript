@@ -1,0 +1,16 @@
+Dim scratch = PathCombine(@WorkingDir, "__compare_demo__")
+Dim same_a = PathCombine(scratch, "same_a.txt")
+Dim same_b = PathCombine(scratch, "same_b.txt")
+Dim less = PathCombine(scratch, "less.txt")
+Dim greater = PathCombine(scratch, "greater.txt")
+
+CreateDir(scratch)
+WriteFile(same_a, "same")
+WriteFile(same_b, "same")
+WriteFile(less, "abc")
+WriteFile(greater, "abd")
+
+WriteLn("same: " + FileCompare(same_a, same_b))
+WriteLn("less: " + FileCompare(less, greater))
+WriteLn("greater: " + FileCompare(greater, less))
+RemoveDir(scratch, 1)

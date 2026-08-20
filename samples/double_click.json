@@ -1,0 +1,42 @@
+{
+  "session_id": "sample-double-click",
+  "state": "stopped",
+  "started_at_ms": 102000,
+  "stopped_at_ms": 102220,
+  "events": [
+    {
+      "type": "mouse_down",
+      "button": "left",
+      "x": 512,
+      "y": 412,
+      "timestamp_ms": 15
+    },
+    {
+      "type": "mouse_up",
+      "button": "left",
+      "x": 512,
+      "y": 412,
+      "timestamp_ms": 49
+    },
+    {
+      "type": "mouse_move",
+      "x": 513,
+      "y": 412,
+      "timestamp_ms": 74
+    },
+    {
+      "type": "mouse_down",
+      "button": "left",
+      "x": 513,
+      "y": 412,
+      "timestamp_ms": 102
+    },
+    {
+      "type": "mouse_up",
+      "button": "left",
+      "x": 513,
+      "y": 412,
+      "timestamp_ms": 137
+    }
+  ]
+}
