@@ -35,14 +35,16 @@ from infrastructure.input.mouse_movement_profile import MouseMovementProfile
 
 def test_desktop_settings_service_defaults_to_config_subdirectory(
     monkeypatch,
+    tmp_path,
 ) -> None:
-    monkeypatch.setenv("APPDATA", r"C:\Users\coder\AppData\Roaming")
+    appdata = tmp_path / "AppData" / "Roaming"
+    monkeypatch.setenv("APPDATA", str(appdata))
 
     service = DesktopSettingsService()
 
-    assert service.config_dir == Path(r"C:\Users\coder\AppData\Roaming\ActionShellScript\config")
+    assert service.config_dir == appdata / "ActionShellScript" / "config"
     assert service.settings_path == Path(
-        r"C:\Users\coder\AppData\Roaming\ActionShellScript\config\desktop_settings.json"
+        appdata / "ActionShellScript" / "config" / "desktop_settings.json"
     )
 
 
