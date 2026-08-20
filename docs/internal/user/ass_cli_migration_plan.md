@@ -22,7 +22,7 @@ ass-cli <subcommand> [--input PATH] [--output PATH] [shared flags...]
 Playback uses the source-first form:
 
 ```powershell
-ass-cli play recording path\to\session.json
+ass-cli play recording .\session.json
 ass-cli play script path\to\document.ass
 ```
 

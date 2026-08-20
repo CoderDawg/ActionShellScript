@@ -31,8 +31,8 @@ For the document workflow, the `ScriptDocument` is the source of truth after con
 
 ## Completed Playback Surface
 
-- `ass-cli play recording path\to\session.json`
-- `ass-cli play recording path\to\session.json --mode preview`
+- `ass-cli play recording .\session.json`
+- `ass-cli play recording .\session.json --mode preview`
 - `ass-cli play script path\to\document.ass`
 - `ass-cli play script path\to\document.ass --mode live --demo-live --ass-play`
 

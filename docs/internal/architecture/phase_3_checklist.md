@@ -153,7 +153,7 @@ Done when:
 
 Implemented path:
 
-- `ass-shape path\to\session.json`
+- `ass-shape .\session.json`
 - this flows from raw session JSON through interpretation and into `ShapedActionSequence`
 - `--show-actions` prints the shaped output contract in a stable readable form
 

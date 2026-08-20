@@ -21,7 +21,7 @@ Portability note: `Struct` remains a core cross-platform language feature, `Reco
 
 Phase 6 playback is complete as an explicit derived execution slice:
 
-- `ass-cli play recording path\to\session.json`
+- `ass-cli play recording .\session.json`
 - `ass-cli play script path\to\document.ass`
 - `ass-cli play script path\to\document.ass --mode live --demo-live --ass-play`
 - playback plans, results, previews, and executor state remain derived from the chosen authority source
@@ -80,9 +80,9 @@ Start recording, perform a short interaction, then press `Shift+Esc` by default 
 Phase 2 derives meaning from a raw recording without mutating the original `RecordingSession`.
 
 ```powershell
-ass-interpret path\to\session.json
-ass-interpret path\to\session.json --show-events
-ass-interpret path\to\session.json --click-max-move-distance-px 2 --drag-min-distance-px 12
+ass-interpret .\session.json
+ass-interpret .\session.json --show-events
+ass-interpret .\session.json --click-max-move-distance-px 2 --drag-min-distance-px 12
 ```
 
 The JSON input is a single object with `session_id` plus an `events` array using the raw recording vocabulary (`mouse_down`, `mouse_up`, `mouse_move`, `mouse_wheel`, `key_down`, `key_up`). The command prints a summary of the derived `InterpretedRecording` and can optionally print each interpreted event as a readable one-line summary.
