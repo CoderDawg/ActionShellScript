@@ -1,9 +1,9 @@
 $ErrorActionPreference = "Stop"
 
-$root = "C:\Users\coder\OneDrive\Documents\dev\Scripts\Python\Macro_Recorders\ASS\ActionShellScript"
-Set-Location $root
+$root = Resolve-Path (Join-Path $PSScriptRoot "..")
+Set-Location $root.Path
 
-$work = Join-Path $root "tmp\e2e"
+$work = Join-Path $root.Path "tmp\e2e"
 New-Item -ItemType Directory -Force -Path $work | Out-Null
 
 $raw = Join-Path $work "session.json"
